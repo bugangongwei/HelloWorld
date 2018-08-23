@@ -1,3 +1,6 @@
-�ܹ�ʮһ���⣬����������ˣ�������
+总共十一道题，这里编码乱了，不妨碍
+双向链表的实现，是因为一时兴起写的，不妨碍
 
-˫��������ʵ�֣�����Ϊһʱ����д�ģ�������
+题目来源：2018网易在线编程题，java版本：
+https://github.com/LyricYang/Internet-Recruiting-Algorithm-Problems/blob/master/NETEASE/Problem%20Description%202018.md#%E7%AC%AC%E4%B9%9D%E9%A2%98
+
