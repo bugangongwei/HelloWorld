@@ -1,3 +1,3 @@
-module bugangongwei/HelloWorl
+module bugangongwei/HelloWorld
 
 go 1.16

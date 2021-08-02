@@ -1,8 +1,7 @@
 package main
 
 import (
-	"bugangongwei/HelloWorl/code"
-	"fmt"
+	"bugangongwei/HelloWorld/verification"
 )
 
 func main() {
@@ -44,18 +43,79 @@ func main() {
 	// }
 
 	// 707 设计链表
-	p2 := code.MyLinkedList{Val: 3, Next: nil}
-	p1 := code.MyLinkedList{Val: 2, Next: &p2}
-	p0 := code.MyLinkedList{Val: 1, Next: &p1}
+	// p4 := code.ListNode{Val: 5, Next: nil}
+	// p3 := code.ListNode{Val: 4, Next: &p4}
+	// p2 := code.ListNode{Val: 8, Next: &p3}
+	// p1 := code.ListNode{Val: 1, Next: &p2}
+	// p0 := code.ListNode{Val: 4, Next: &p1}
 
-	head := p0
-	head.AddAtHead(0)
-	fmt.Println(head.Val)
+	// pf := code.ListNode{Val: 5, Next: nil}
+	// pe := code.ListNode{Val: 4, Next: &pf}
+	// pd := code.ListNode{Val: 8, Next: &pe}
+	// pc := code.ListNode{Val: -4, Next: nil}
+	// pb := code.ListNode{Val: 0, Next: &pc}
+	// pa := code.ListNode{Val: 2, Next: nil}
 
-	p := &head
-	for p != nil {
-		fmt.Println(p.Val)
-		p = p.Next
-	}
+	// 206 反转链表
+	// newHead := code.ReverseList(&p0)
 
+	// 24 两两交换链表中的节点
+	// newHead := code.SwapPairs(&p0)
+
+	// 19 删除倒数第 n 个链表元素
+	// newHead := code.RemoveNthFromEnd(&p0, 2)
+
+	// 20.07 链表相交
+	// newHead := code.GetIntersectionNode(&p0, &pa)
+	// p := newHead
+	// for p != nil {
+	// 	fmt.Println(p.Val)
+	// 	p = p.Next
+	// }
+
+	// 142 环形链表找入环口
+	// head := &code.ListNode{Val: 1, Next: &pa}
+	// pa.Next = head
+	// enter := code.DetectCycle(nil)
+	// fmt.Println(verification.Return_err(1))
+
+	// fmt.Println("the end")
+
+	/* 二叉树 */
+	// root := &code.TreeNode{Val: 1}
+	// root.Left = &code.TreeNode{Val: 2}
+	// root.Right = &code.TreeNode{Val: 3}
+	// root.Left.Left = &code.TreeNode{Val: 4}
+
+	// 前序, 中序, 后序遍历
+	// arr := code.PostorderTraversal2(root)
+	// fmt.Println(arr)
+
+	// root := &code.Node{Val: 3}
+	// root.Left = &code.Node{Val: 9}
+	// root.Right = &code.Node{Val: 20}
+	// root.Left.Left = &code.Node{Val: 4}
+	// root.Left.Right = &code.Node{Val: 5}
+	// root.Right.Left = &code.Node{Val: 15}
+	// root.Right.Right = &code.Node{Val: 7}
+	// code.Connect2(root)
+
+	// root := &code.TreeNode{Val: 4}
+	// root.Left = &code.TreeNode{Val: 2}
+	// root.Right = &code.TreeNode{Val: 7}
+	// root.Left.Left = &code.TreeNode{Val: 1}
+	// root.Left.Right = &code.TreeNode{Val: 3}
+	// root.Right.Left = &code.TreeNode{Val: 6}
+	// root.Right.Right = &code.TreeNode{Val: 9}
+
+	// 层序遍历
+	// root := &code.TreeNode{Val: 3}
+	// root.Left = &code.TreeNode{Val: 9}
+	// root.Right = &code.TreeNode{Val: 20}
+	// root.Right.Left = &code.TreeNode{Val: 15}
+	// root.Right.Right = &code.TreeNode{Val: 7}
+	// fmt.Println(code.MinDepth(root))
+
+	// 回溯
+	verification.UnmarshalToRaw()
 }
