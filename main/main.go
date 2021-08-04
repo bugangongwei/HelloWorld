@@ -1,7 +1,8 @@
 package main
 
 import (
-	"bugangongwei/HelloWorld/verification"
+	"bugangongwei/HelloWorld/code"
+	"fmt"
 )
 
 func main() {
@@ -117,5 +118,5 @@ func main() {
 	// fmt.Println(code.MinDepth(root))
 
 	// 回溯
-	verification.UnmarshalToRaw()
+	fmt.Println(code.SolveNQueens(5))
 }
