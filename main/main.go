@@ -118,5 +118,21 @@ func main() {
 	// fmt.Println(code.MinDepth(root))
 
 	// 回溯
-	fmt.Println(code.SolveNQueens(5))
+	{
+		lll := &code.TreeNode{
+			Right: &code.TreeNode{},
+		}
+		ll := &code.TreeNode{
+			Left: lll,
+		}
+		left := &code.TreeNode{
+			Left: &code.TreeNode{
+				Left: ll,
+			},
+		}
+		root := &code.TreeNode{
+			Left: left,
+		}
+		fmt.Println(code.MinCameraCover(root))
+	}
 }
