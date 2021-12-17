@@ -141,3 +141,68 @@ func Connect2(root *Node) *Node {
 	}
 	return root
 }
+
+// 662. 二叉树最大宽度
+func WidthOfBinaryTree(root *TreeNode) int {
+	var (
+		q        = new(FullNodeQueue)
+		result   = 0
+		curDepth = 0
+		left     = 0
+	)
+	q.Push(&FullNode{root, 0, 0})
+
+	for q.Size() > 0 {
+		s := q.Size()
+		for i := 0; i < s; i++ {
+			node := q.Pop()
+			if node.node != nil {
+				q.Push(&FullNode{node.node.Left, node.depth + 1, node.position * 2})
+				q.Push(&FullNode{node.node.Right, node.depth + 1, node.position*2 + 1})
+				if curDepth != node.depth {
+					curDepth = node.depth
+					left = node.position
+				}
+				result = max(result, node.position-left+1)
+			}
+		}
+	}
+
+	return result
+}
+
+type FullNode struct {
+	node     *TreeNode
+	depth    int
+	position int
+}
+
+type FullNodeQueue struct {
+	arr []*FullNode
+}
+
+func (q *FullNodeQueue) Pop() *FullNode {
+	if len(q.arr) == 0 {
+		log.Fatal("cannot pop from empty queue")
+	}
+
+	node := q.arr[0]
+	q.arr = q.arr[1:]
+	return node
+}
+
+func (q *FullNodeQueue) Top() *FullNode {
+	if len(q.arr) == 0 {
+		log.Fatal("empty queue")
+	}
+
+	return q.arr[0]
+}
+
+func (q *FullNodeQueue) Push(node *FullNode) {
+	q.arr = append(q.arr, node)
+}
+
+func (q *FullNodeQueue) Size() int {
+	return len(q.arr)
+}

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	"strconv"
+	"strings"
 )
 
 // 分发小饼干
@@ -508,6 +509,7 @@ func MinCameraCover(root *TreeNode) int {
 	)
 
 	fn = func(root *TreeNode) int {
+
 		if root == nil {
 			return 2
 		}
@@ -530,6 +532,52 @@ func MinCameraCover(root *TreeNode) int {
 
 	if fn(root) == 0 {
 		result++
+	}
+	return result
+}
+
+/*
+1963. 使字符串平衡的最小交换次数
+"]]][[["
+"][]["
+"[]"
+*/
+// (1) 左右括号总数相同的情况下, 可以认为, 在任何一个位置, 左括号的数量都应该大于右括号
+func MinSwaps(s string) int {
+	var result, left, right = 0, 0, 0
+	for _, char := range strings.Split(s, "") {
+		if char == "[" {
+			left++
+		} else {
+			right++
+		}
+
+		if right > left {
+			result++
+			left++
+			right--
+		}
+	}
+
+	return result
+}
+
+// (2) 贪心
+// 局部最优: 所有的 "]" 都把它前面的 "[" 消除, 左边没有 "[" 的 "]" 是不对的, 要交换
+// 全局最优: 经过交换以后, 所有的 "]" 都把它前面的 "[" 消除
+func MinSwaps2(s string) int {
+	var result, left = 0, 0
+	for _, char := range strings.Split(s, "") {
+		if char == "[" {
+			left++
+		} else if left > 0 {
+			// "]" 并且存在 left, 则匹配消掉一个 "["
+			left--
+		} else {
+			// "]" 并且前边没有 left 了, 则交换, "]" 变 "[", left++
+			result++
+			left++
+		}
 	}
 	return result
 }

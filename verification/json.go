@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+/* about json tag */
+
 type JsonTag struct {
 	Name string `json:"name_str"`
 	Age  int    `json:"age_int"`
@@ -40,3 +42,12 @@ func UnmarshalToRaw() {
 	fmt.Println(string(data.Extra))
 
 }
+
+/* test json mashal size */
+
+type UserCoursesArgs struct {
+	UserID    uint64   `json:"user_id"`
+	CourseIDs []string `json:"course_ids"`
+}
+
+
