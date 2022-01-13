@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	git.llsapp.com/pb/common-go v0.5.5710 // indirect
+	github.com/RoaringBitmap/roaring v0.9.4 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/google/uuid v1.3.0 // indirect
