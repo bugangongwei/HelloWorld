@@ -1,9 +1,13 @@
 package main
 
 import (
-	"bugangongwei/HelloWorld/pkg/http"
+	"fmt"
+
+	"bugangongwei/HelloWorld/code"
 )
 
 func main() {
-	http.InitHttpEngine()
+	// http.InitHttpEngine()
+
+	fmt.Println(code.MinJumps([]int{11,22,7,7,7,7,7,7,7,22,13}))
 }

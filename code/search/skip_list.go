@@ -1,9 +1,14 @@
-package code
+package search
 
 import (
 	"errors"
 	"math/rand"
 )
+
+/*
+	reference: https://z.itpub.net/article/detail/14191D414D97A8CCC558B09FF5DB0BA1
+	reference: https://weread.qq.com/web/reader/d35323e0597db0d35bd957bk341323f021e34173cb3824c
+*/
 
 // 跳跃表的实现
 const (

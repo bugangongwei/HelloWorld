@@ -72,10 +72,12 @@ func Google_Wire_Interface_Exam() {
 type Message string
 
 func NewMessage() Message {
+	fmt.Println("NewMessage()")
 	return Message("Hi there!")
 }
 
 func NewGreeter(m Message) Greeter {
+	fmt.Println("NewGreeter()")
 	return Greeter{Message: m}
 }
 
@@ -112,6 +114,7 @@ type Eve struct {
 }
 
 func NewEve(m Msg) Eve {
+	fmt.Println("NewEve()")
 	return Eve{M: m}
 }
 
