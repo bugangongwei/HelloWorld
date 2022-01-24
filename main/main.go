@@ -9,5 +9,5 @@ import (
 func main() {
 	// http.InitHttpEngine()
 
-	fmt.Println(code.MinJumps([]int{11,22,7,7,7,7,7,7,7,22,13}))
+	fmt.Println(code.FindMedianSortedArrays([]int{1}, []int{2,3,4,5,6}))
 }
