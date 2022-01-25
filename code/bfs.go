@@ -2,6 +2,7 @@ package code
 
 import (
 	"log"
+	"math"
 )
 
 // 2059. 转化数字的最小运算数
@@ -261,4 +262,58 @@ func MinJumps(arr []int) int {
 	}
 
 	return 0
+}
+
+func SecondMinimum(n int, edges [][]int, time, change int) (ans int) {
+	// 记录每个节点的关联节点, 构成一个无向图
+	// [[] [2 3 4] [1] [1 4] [1 3 5] [4]]
+	graph := make([][]int, n+1)
+	for _, e := range edges {
+		x, y := e[0], e[1]
+		graph[x] = append(graph[x], y)
+		graph[y] = append(graph[y], x)
+	}
+
+	// dist[i][0] 表示从 1 到 i 的最短路长度，dist[i][1] 表示从 1 到 i 的严格次短路长度
+	// [[0 0] [0 2147483647] [2147483647 2147483647] [2147483647 2147483647] [2147483647 2147483647] [2147483647 2147483647]]
+	dist := make([][2]int, n+1)
+	dist[1][1] = math.MaxInt32
+	for i := 2; i <= n; i++ {
+		dist[i] = [2]int{math.MaxInt32, math.MaxInt32}
+	}
+
+	type pair struct {
+		x int // 节点值
+		d int // 从 1 到当前节点所跳的边
+	}
+
+	queue := []pair{{1, 0}} // BFS 必备的队列
+	for dist[n][1] == math.MaxInt32 {
+		// pop 队列元素
+		p := queue[0]
+		queue = queue[1:]
+
+		// 关联节点入队
+		for _, y := range graph[p.x] {
+			d := p.d + 1
+			if d < dist[y][0] {
+				dist[y][0] = d
+				queue = append(queue, pair{y, d})
+			} else if dist[y][0] < d && d < dist[y][1] {
+				dist[y][1] = d
+				queue = append(queue, pair{y, d})
+			}
+		}
+	}
+
+	// 计算时间
+	for i := 0; i < dist[n][1]; i++ {
+		if ans%(change<<1) >= change {
+			// 红灯等绿灯
+			ans += change<<1 - ans%(change<<1)
+		}
+		ans += time
+	}
+
+	return
 }

@@ -9,5 +9,5 @@ import (
 func main() {
 	// http.InitHttpEngine()
 
-	fmt.Println(code.FindMedianSortedArrays([]int{1}, []int{2,3,4,5,6}))
+	fmt.Println(code.SecondMinimum(5, [][]int{{1, 2}, {1, 3}, {1, 4}, {3, 4}, {4, 5}}, 3, 5))
 }
