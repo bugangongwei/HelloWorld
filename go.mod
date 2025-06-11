@@ -1,6 +1,8 @@
 module bugangongwei/HelloWorld
 
-go 1.18
+go 1.23.0
+
+toolchain go1.23.3
 
 require (
 	github.com/RoaringBitmap/roaring v0.9.4
@@ -12,7 +14,7 @@ require (
 	github.com/oklog/ulid/v2 v2.0.2
 	github.com/stretchr/testify v1.6.1
 	go.uber.org/dig v1.13.0
-	golang.org/x/exp v0.0.0-20190121172915-509febef88a4
+	golang.org/x/exp v0.0.0-20250606033433-dcc06ee1d476
 	gopkg.in/go-playground/validator.v8 v8.18.2
 )
 

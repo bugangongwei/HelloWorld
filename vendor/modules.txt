@@ -112,8 +112,9 @@ go.uber.org/dig/internal/dot
 # golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 ## explicit; go 1.11
 golang.org/x/crypto/sha3
-# golang.org/x/exp v0.0.0-20190121172915-509febef88a4
-## explicit
+# golang.org/x/exp v0.0.0-20250606033433-dcc06ee1d476
+## explicit; go 1.23.0
+golang.org/x/exp/constraints
 golang.org/x/exp/rand
 # golang.org/x/sys v0.0.0-20211025201205-69cdffdb9359
 ## explicit; go 1.17
