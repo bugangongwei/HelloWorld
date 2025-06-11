@@ -3,9 +3,9 @@
 package binding
 
 import (
+	"fmt"
 	"net/http"
 
-	"git.llsapp.com/awesome/log"
 	"github.com/gin-gonic/gin"
 )
 
@@ -108,7 +108,8 @@ func validate(obj interface{}) error {
 func BindQuery(c *gin.Context, obj interface{}) (err error) {
 	if err = Query.Bind(c.Request, obj); err != nil {
 		if gerr := c.AbortWithError(http.StatusBadRequest, err).SetType(gin.ErrorTypeBind); gerr != nil {
-			log.Warnf("gin set error type failed(%+v)", gerr)
+			// log.Warnf("gin set error type failed(%+v)", gerr)
+			fmt.Println(gerr)
 		}
 	}
 	return

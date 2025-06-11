@@ -6,7 +6,6 @@ import (
 	"bugangongwei/HelloWorld/repo"
 	"bugangongwei/HelloWorld/util"
 
-	"git.llsapp.com/awesome/log"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,7 +17,7 @@ func GetHistories(c *gin.Context) {
 		return
 	}
 
-	log.Infof("GetHistories request: %v", req)
+	// log.Infof("GetHistories request: %v", req)
 
 	c.Data(http.StatusOK, "application/json", nil)
 }
